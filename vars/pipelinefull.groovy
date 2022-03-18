@@ -1,17 +1,19 @@
 def call(){
-	pipeline {
-		options {
-			timeout(time: 30,unit: 'MINUTES')
-		}
-	agent any
-	stages {
-		stage('hola'){
-			steps{
-				echo 'hola'
-			}
 
-		}
-	}
+pipeline {
+  agent any
+  stages {
+    stage('download source') {
+      steps {
+        echo './gradlew test'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo './gradlew test'
+      }
+    }
+  }
+}
 
-	}
 }
