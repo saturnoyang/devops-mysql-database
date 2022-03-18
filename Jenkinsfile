@@ -1,3 +1,3 @@
-Library('devops-mysql-database') _
+@Library('devops-mysql-database') _
 
 pipelineFull()
