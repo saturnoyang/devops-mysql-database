@@ -1,10 +1,13 @@
+def code
+
 pipeline {
   agent any
   stages {
     stage('download source') {
       steps {
         echo './gradlew test'
-        commandTest()
+        code = load 'commandTest.groovy'
+        code.commandTest()
       }
     }
     stage('Test') {
