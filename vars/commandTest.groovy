@@ -1,4 +1,4 @@
-def call(){
+def commandTest(){
 	
 	echo "hola"
 }
