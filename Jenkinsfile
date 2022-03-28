@@ -6,7 +6,7 @@ pipeline {
         script {
           def code
           echo './gradlew test'
-          code = load 'commandTest.groovy'
+          code = load 'vars/commandTest.groovy'
           code.commandTest()
          }
       }
