@@ -10,6 +10,7 @@ pipeline {
     }
     stage('Test') {
       steps {
+        echo "${clone_url}"
         echo './gradlew test'
       }
     }
