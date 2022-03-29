@@ -12,6 +12,12 @@ pipeline {
       steps {
         sh 'env'
         echo './gradlew test'
+        script{
+          def printParams() {
+            env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
+            }
+          printParams()
+        }
       }
     }
   }
