@@ -1,9 +1,9 @@
 @Library('devops-mysql-database')_
 
-          def printParams() {
-            env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
-            }
-          printParams()
+
+env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
+          
+
 
 pipeline {
   agent any
