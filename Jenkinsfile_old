@@ -1,11 +1,14 @@
-@Library('devops-mysql-database')_
-
 pipeline {
   agent any
   stages {
     stage('download source') {
       steps {
-        holamundo 'ricardo'
+        script {
+          def code
+          echo './gradlew test'
+          code = load 'vars/commandTest.groovy'
+          code.commandTest()
+         }
       }
     }
     stage('Test') {
