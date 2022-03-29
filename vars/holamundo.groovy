@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
-def call(String name = 'human') {
-  echo "Hello, ${name}."
+def call(String nam = 'human') {
+  echo "Hello, ${nam}."
 
   
   env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
