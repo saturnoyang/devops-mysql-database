@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('download source') {
       steps {
-        holamundo 'ricardo'
+        holamundo 'ricardo parte 2'
       }
     }
     stage('Test') {
