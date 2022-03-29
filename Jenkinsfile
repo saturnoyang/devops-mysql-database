@@ -1,5 +1,10 @@
 @Library('devops-mysql-database')_
 
+          def printParams() {
+            env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
+            }
+          printParams()
+
 pipeline {
   agent any
   stages {
@@ -12,12 +17,7 @@ pipeline {
       steps {
         sh 'env'
         echo './gradlew test'
-        script{
-          def printParams() {
-            env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
-            }
-          printParams()
-        }
+
       }
     }
   }
