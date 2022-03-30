@@ -10,8 +10,12 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'env'
+        REPO_CLONE_URL = $repo_clone_url
+        
+        echo "clonar repositorio: $REPO_CLONE_URL"
+
         echo './gradlew test'
+
 
       }
     }
