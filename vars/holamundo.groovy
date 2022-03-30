@@ -1,10 +1,15 @@
 #!/usr/bin/env groovy
 
 def call(String nam = 'human') {
-  echo "Hello, ${nam}."
+
+  REPO_CLONE_URL = $repo_clone_url
 
   
-  env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
+  echo "Hello, ${nam}."
+  echo "clonar repositorio: $REPO_CLONE_URL"
+
+  
+  
 
 
 
