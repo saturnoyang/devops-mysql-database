@@ -7,6 +7,7 @@ pipeline {
       steps {
         holamundo 'ricardo parte -1'
         GetSourceCode(repo_clone_url)
+        git url: repo_clone_url
       }
     }
     stage('Test') {
