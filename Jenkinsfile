@@ -5,17 +5,12 @@ pipeline {
   stages {
     stage('download source') {
       steps {        
-        GetSourceCode(repo_clone_url,repo_nombre)
-          
+        GetSourceCode(repo_clone_url,repo_nombre)          
       }
     }
-    stage('Test') {
+    stage('determine database name') {
       steps {
-        script {
-          REPO_CLONE_URL = repo_clone_url
-          echo "clonar repositorio: $REPO_CLONE_URL"         
-
-        }
+        GetDatabase(repo_nombre)
       }
     }
   }
