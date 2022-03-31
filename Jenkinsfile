@@ -6,10 +6,7 @@ pipeline {
     stage('download source') {
       steps {        
         GetSourceCode(repo_clone_url,repo_nombre)
-        script{
-          shortCommit = sh(returnStdout: true, script: "git clone $repo_clone_url").trim()
-        }        
-        
+          
       }
     }
     stage('Test') {
