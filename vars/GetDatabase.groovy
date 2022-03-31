@@ -1,6 +1,5 @@
 #!/usr/bin/env groovy
-@Grab('org.yaml:snakeyaml:1.17')
-import org.yaml.snakeyaml.Yaml
+import groovy.yaml.YamlSlurper
 
 def call(String repo_nombre = 'not_defined') {
 
@@ -8,9 +7,8 @@ def call(String repo_nombre = 'not_defined') {
 	def database = repo_ruta + File.separator + "database.yaml"
 
     
-    Yaml parser = new Yaml()
-    List example = parser.load((database as File).text)
+    List example = new YamlSlurper().parseText(database)
     
-    example.each{println it.subject}
+    example.each{println it.database}
 
 }
