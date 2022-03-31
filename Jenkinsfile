@@ -4,9 +4,8 @@ pipeline {
   agent any
   stages {
     stage('download source') {
-      steps {
-        holamundo 'ricardo parte -1'
-        GetSourceCode(repo_clone_url)
+      steps {        
+        GetSourceCode(repo_clone_url,repo_nombre)
         script{
           shortCommit = sh(returnStdout: true, script: "git clone $repo_clone_url").trim()
         }        
