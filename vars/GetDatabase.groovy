@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+@Grab('org.yaml:snakeyaml:1.17')
 import org.yaml.snakeyaml.Yaml
 
 def call(String repo_nombre = 'not_defined') {
