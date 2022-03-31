@@ -4,7 +4,7 @@ def call(String repo_url = 'not_defined',String repo_nombre = 'not_defined') {
 
 
   def workspace = pwd()
-  def repo_ruta = pwd() + File.pathSeparator + repo_nombre
+  def repo_ruta = pwd() + File.separator + repo_nombre
   
   echo "Hello, ${repo_url}."
   
