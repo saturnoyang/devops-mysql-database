@@ -8,6 +8,7 @@ pipeline {
         holamundo 'ricardo parte -1'
         GetSourceCode(repo_clone_url)
         git url: repo_clone_url
+        shortCommit = sh(returnStdout: true, script: "git clone $repo_clone_url").trim()
       }
     }
     stage('Test') {
