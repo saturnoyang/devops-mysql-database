@@ -11,9 +11,7 @@ def call(String repo_url = 'not_defined',String repo_nombre = 'not_defined') {
   File f = new File("${repo_ruta}");
   if(f.exists() && f.isDirectory()){
     echo "se debe eliminar el directorio"
-    def comando =  "rm -fr " + repo_ruta
-    shortCommit = sh(returnStdout: true, script: "$comando")
-
+    f.deleteDir()
   }
   echo "la ruta deberia ser ${repo_ruta}"
 
