@@ -3,7 +3,7 @@
 def call(String repo_url = 'not_defined',String repo_nombre = 'not_defined') {
 
 
-
+  def workspace = pwd()
   
   echo "Hello, ${repo_url}."
   File f = new File("${repo_nombre}");
@@ -12,6 +12,8 @@ def call(String repo_url = 'not_defined',String repo_nombre = 'not_defined') {
     shortCommit = sh(returnStdout: true, script: "rm -fr $repo_nombre").trim()
 
   }
+  echo "la ruta deberia ser ${workspace}"
+
   echo f.absolutePath
   shortCommit = sh(returnStdout: true, script: "git clone $repo_url").trim()
   
