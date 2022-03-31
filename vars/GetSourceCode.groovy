@@ -14,7 +14,7 @@ def call(String repo_url = 'not_defined',String repo_nombre = 'not_defined') {
     shortCommit = sh(returnStdout: true, script: "rm -fr $repo_ruta").trim()
 
   }
-  echo "la ruta deberia ser ${workspace}"
+  echo "la ruta deberia ser ${repo_ruta}"
 
 
   shortCommit = sh(returnStdout: true, script: "git clone $repo_url").trim()
