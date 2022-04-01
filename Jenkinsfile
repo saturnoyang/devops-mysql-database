@@ -24,5 +24,12 @@ pipeline {
         }
       }
     }
+    stage('run database scripts') {
+      steps{
+        script{
+          RunDatabaseScripts(db_details)
+        }
+      }
+    }
   }
 }
