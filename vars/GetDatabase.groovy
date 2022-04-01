@@ -7,6 +7,6 @@ def call(String repo_nombre = 'not_defined') {
 
 	def info = readYaml (file: "${database}")
       
-    echo info.database
+    return info.database
 
 }
