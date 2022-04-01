@@ -1,5 +1,6 @@
 @Library('devops-mysql-database')_
 def database = 'none'
+def db_details = 'none'
 
 pipeline {
   agent any
@@ -12,14 +13,14 @@ pipeline {
     stage('determine database name') {
       steps{
         script{
-          def database = GetDatabase(repo_nombre)
+          database = GetDatabase(repo_nombre)
         }
       }
     }
     stage('get database details') {
       steps{
         script{
-          def db_details = GetDatabaseDetails(database)
+          db_details = GetDatabaseDetails(database)
         }
       }
     }
