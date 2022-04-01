@@ -1,5 +1,5 @@
 --- 
-  url: localhost
-  puerto: 3306
-  usuario: root
-  password: blabla
+  url: "localhost"
+  puerto: "3306"
+  usuario: "root"
+  password: "blabla"
