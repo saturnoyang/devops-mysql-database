@@ -27,7 +27,7 @@ pipeline {
     stage('ejecutar tareas en la base de datos') {
       steps{
         script{
-          RunDatabaseScripts(db_details)
+          RunDatabaseScripts(db_details, database)
         }
       }
     }
