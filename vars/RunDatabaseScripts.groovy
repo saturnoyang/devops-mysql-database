@@ -1,11 +1,26 @@
 #!/usr/bin/env groovy
 
-def call(java.util.LinkedHashMap db_details, String database ) {
+def call(java.util.LinkedHashMap db_details, String database, String repo_nombre ) {
 	echo db_details."url"
 	echo db_details."puerto"
 	echo db_details."usuario"
 	echo db_details."password"
-	mysql = "mysql -h " +db_details."url" + " -P "+db_details."puerto"+" -u "+db_details."usuario"+" ${database}"
+	mysql = "mysql -h " +db_details."url" + " -P "+db_details."puerto"+" -u "+db_details."usuario"+" ${database} -e"
 
 	echo mysql
+
+
+	def repo_ruta = pwd() + File.separator + repo_nombre
+
+
+	def list = []
+	def dir = new File(repo_ruta)
+	dir.eachFileRecurse (FileType.FILES) { file ->
+	  list << file
+	}
+
+	list.each {
+	  println it.path
+	}
+
 }
