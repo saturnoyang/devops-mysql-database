@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-import groovy.io.FileType
+import static groovy.io.FileType.FILES
 
 
 def call(java.util.LinkedHashMap db_details, String database, String repo_nombre ) {
@@ -15,13 +15,11 @@ def call(java.util.LinkedHashMap db_details, String database, String repo_nombre
 	def repo_ruta = pwd() + File.separator + repo_nombre
 
 
-	def list = []
-	def dir = new File(repo_ruta)
-	dir.eachFileRecurse (FileType.FILES) { file ->
-	  list << file
-	}
-
-	list.each {
+	def dir = new File(repo_ruta);
+	def files = [];
+	dir.traverse(type: FILES, maxDepth: 0) { files.add(it) };
+	
+	files.each {
 	  println it.path
 	}
 
