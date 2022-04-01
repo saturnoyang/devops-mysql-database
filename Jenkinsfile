@@ -9,8 +9,13 @@ pipeline {
       }
     }
     stage('determine database name') {
+      steps{
+        script{
+          def database = GetDatabase(repo_nombre)
+        }
+      }
 
-      def database = GetDatabase(repo_nombre)
+      
 
     }
   }
