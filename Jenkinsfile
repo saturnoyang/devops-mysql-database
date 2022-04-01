@@ -1,4 +1,5 @@
 @Library('devops-mysql-database')_
+def database = 'none'
 
 pipeline {
   agent any
