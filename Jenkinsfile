@@ -14,9 +14,13 @@ pipeline {
           def database = GetDatabase(repo_nombre)
         }
       }
-
-      
-
+    }
+    stage('get database details') {
+      steps{
+        script{
+          def db_details = GetDatabaseDetails(database)
+        }
+      }
     }
   }
 }
