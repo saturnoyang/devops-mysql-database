@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 import groovy.io.FileType
 
-@NonCPS
+
 def call(java.util.LinkedHashMap db_details, String database, String repo_nombre ) {
 	echo db_details."url"
 	echo db_details."puerto"
@@ -17,6 +17,7 @@ def call(java.util.LinkedHashMap db_details, String database, String repo_nombre
 	def repo_ruta = pwd() + File.separator + repo_nombre
 
 
+	@NonCPS
 	new File(repo_ruta).traverse(type: FileType.FILES, nameFilter: ~/.*\.sql/) {
     	
     	cmd = mysql + it +"\""
