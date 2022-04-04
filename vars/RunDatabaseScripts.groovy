@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-import static groovy.io.FileType.*
+import groovy.io.FileType
 
 
 def call(java.util.LinkedHashMap db_details, String database, String repo_nombre ) {
