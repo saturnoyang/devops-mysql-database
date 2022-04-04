@@ -23,7 +23,8 @@ def call(java.util.LinkedHashMap db_details, String database, String repo_nombre
     	cmd = mysql + it +"\""
 
     	echo cmd
-
+    	
+    	@NonCPS
     	test = sh(
     			script: cmd,
     			returnStdout: true).trim()
