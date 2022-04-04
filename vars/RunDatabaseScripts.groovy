@@ -1,7 +1,5 @@
 #!/usr/bin/env groovy
 import groovy.io.FileType
-import java.io.File.traverse
-
 
 def call(java.util.LinkedHashMap db_details, String database, String repo_nombre ) {
 	echo db_details."url"
