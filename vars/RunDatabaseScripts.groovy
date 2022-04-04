@@ -15,7 +15,7 @@ def call(java.util.LinkedHashMap db_details, String database, String repo_nombre
 
 
 	new File(repo_ruta).traverse(type: FileType.FILES,nameFilter   : ~/.*\.sql/) {
-    	println mysql + it
+    	println it
 	}
 
 
