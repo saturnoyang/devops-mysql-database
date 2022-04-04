@@ -15,12 +15,9 @@ def call(java.util.LinkedHashMap db_details, String database, String repo_nombre
 	def repo_ruta = pwd() + File.separator + repo_nombre
 
 
-	def dir = new File(repo_ruta);
-	def files = [];
-	dir.traverse(type: FILES ) { files.add(it) };
-	
-	files.each {
-	  println it.name
+	new File(repo_ruta).traverse(type: FileType.FILES,nameFilter   : ~/.*\.sql/) {
+    	echo mysql + it
 	}
+
 
 }
