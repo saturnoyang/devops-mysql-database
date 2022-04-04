@@ -23,7 +23,7 @@ def call(java.util.LinkedHashMap db_details, String database, String repo_nombre
 
     	echo cmd
 
-    	shortCommit = sh(returnStdout: true, script: cmd )
+    	sh cmd
 
 
 	}
