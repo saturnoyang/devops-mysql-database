@@ -25,9 +25,7 @@ def call(java.util.LinkedHashMap db_details, String database, String repo_nombre
 
 	echo cmd
 
-    test = new sh(
-    		script: cmd,
-    		returnStdout: true).trim()
+    test = sh(script: cmd,	returnStdout: true).trim()
 
 
 }
