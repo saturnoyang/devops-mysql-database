@@ -16,20 +16,18 @@ def call(java.util.LinkedHashMap db_details, String database, String repo_nombre
 
 	
 	def repo_ruta = pwd() + File.separator + repo_nombre
+	cmd = ""
 
 
-	new File(repo_ruta).traverse(type: FileType.FILES, nameFilter: ~/.*\.sql/) {
-    	
-    	cmd = mysql + it +"\""
-
-    	echo cmd
-
-    	test = new sh(
-    			script: cmd,
-    			returnStdout: true).trim()
-
-
+	new File(repo_ruta).traverse(type: FileType.FILES, nameFilter: ~/.*\.sql/) {    	
+    	cmd = cmd + mysql + it +"\" \n"
 	}
+
+	echo cmd
+
+    test = new sh(
+    		script: cmd,
+    		returnStdout: true).trim()
 
 
 }
